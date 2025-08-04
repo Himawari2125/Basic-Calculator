@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Basic Calculator</title>
+  <link rel="stylesheet" href="assets/css/style.css" />
+</head>
+<body>
+
+  <div class="calculator">
+    <div id="display" class="display">0</div>
+    <!-- Removed memory display since Ans removed -->
+
+    <!-- Show/Hide History -->
+    <button id="toggle-history" class="toggle-history">Show History</button>
+    <div id="history" class="history hidden"></div>
+
+    <!-- Top 2 buttons (Row 1) -->
+    <div class="top-buttons">
+      <button class="clear">C</button>
+      <button class="backspace">DEL</button>
+    </div>
+
+    <!-- Main Grid Buttons (5 rows x 4 cols) -->
+    <div class="buttons">
+      <button>(</button>
+      <button>)</button>
+      <button>%</button>
+      <button class="operator">/</button>
+
+      <button>7</button>
+      <button>8</button>
+      <button>9</button>
+      <button class="operator">*</button>
+
+      <button>4</button>
+      <button>5</button>
+      <button>6</button>
+      <button class="operator">-</button>
+
+      <button>1</button>
+      <button>2</button>
+      <button>3</button>
+      <button class="operator">+</button>
+
+      <button>0</button>
+      <button>.</button>
+      <button class="equal" style="grid-column: span 2;">=</button>
+    </div>
+  </div>
+
+  <script src="assets/javascript/script.js"></script>
+</body>
+</html>

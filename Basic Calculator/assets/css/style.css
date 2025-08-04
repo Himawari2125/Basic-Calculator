@@ -1,0 +1,208 @@
+* {
+  box-sizing: border-box;
+}
+
+body {
+  background: #f0f0f0;
+  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  margin: 0;
+  padding: 10px;
+}
+
+.calculator {
+  background: #222;
+  padding: 20px;
+  border-radius: 15px;
+  box-shadow: 0 8px 16px rgba(0, 0, 0, 0.25);
+  width: 100%;
+  max-width: 400px;
+}
+
+.display {
+  background: #000;
+  color: #0f0;
+  font-size: 2rem;
+  text-align: right;
+  padding: 15px;
+  border-radius: 10px;
+  margin-bottom: 10px;
+  min-height: 50px;
+  overflow-x: auto;
+  word-wrap: break-word;
+}
+
+/* Removed memory since Ans removed */
+
+/* History */
+.history {
+  background: #111;
+  color: #ccc;
+  font-size: 0.9rem;
+  padding: 10px;
+  border-radius: 10px;
+  height: 100px;
+  overflow-y: auto;
+  margin-bottom: 15px;
+  white-space: nowrap;
+}
+
+.history div {
+  cursor: pointer;
+  padding: 3px 0;
+}
+
+.history div:hover {
+  color: #fff;
+}
+
+.history::-webkit-scrollbar {
+  width: 5px;
+}
+
+.history::-webkit-scrollbar-thumb {
+  background: #555;
+  border-radius: 5px;
+}
+
+.toggle-history {
+  background: #555;
+  color: #fff;
+  border: none;
+  padding: 8px 12px;
+  border-radius: 8px;
+  margin-bottom: 10px;
+  cursor: pointer;
+  font-size: 0.9rem;
+  transition: background 0.2s;
+}
+
+.toggle-history:hover {
+  background: #777;
+}
+
+.hidden {
+  display: none;
+}
+
+/* Top row buttons: Clear / Del */
+.top-buttons {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 10px;
+  margin-bottom: 10px;
+}
+
+.top-buttons button {
+  padding: 16px;
+  font-size: 1.1rem;
+  border: none;
+  border-radius: 10px;
+  background: #555;
+  color: white;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.top-buttons .clear {
+  background: #dc3545;
+}
+
+.top-buttons .backspace {
+  background: #ff9900;
+}
+
+.top-buttons button:hover {
+  background: #777;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.top-buttons button:focus {
+  outline: 2px solid #dc3545;
+  outline-offset: 2px;
+}
+
+/* Main calculator buttons grid: 4 columns, 5 rows */
+.buttons {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.buttons button {
+  padding: 18px;
+  font-size: 1.2rem;
+  border: none;
+  border-radius: 10px;
+  background: #444;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.2s ease, box-shadow 0.2s ease;
+  user-select: none;
+  outline: none;
+  box-shadow: none;
+}
+
+.buttons button:hover {
+  background: #666;
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+.buttons button:focus {
+  outline: 2px solid #6f42c1;
+  outline-offset: 2px;
+}
+
+.buttons .operator {
+  background: #007bff;
+}
+
+.buttons .equal {
+  background: #28a745;
+  grid-column: span 2;
+}
+
+/* Responsive tweaks */
+@media (max-width: 480px) {
+  .calculator {
+    padding: 15px;
+  }
+
+  .display {
+    font-size: 1.5rem;
+    padding: 12px;
+  }
+
+  .history {
+    font-size: 0.8rem;
+  }
+
+  .top-buttons button {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .buttons button {
+    padding: 14px;
+    font-size: 1rem;
+  }
+
+  .top-buttons {
+    gap: 8px;
+  }
+
+  .buttons {
+    gap: 10px;
+  }
+
+  /* Equal button spans only 1 column on small screens */
+  .buttons .equal {
+    grid-column: span 1;
+  }
+}
